@@ -475,7 +475,7 @@ net.Receive( "AdminPopups_ClaimCase", function( len )
 						-- Draw frame
 						draw.RoundedBox( 8, 0, 0, w, h, col_gray_light )
 						-- Draw top (green/claimed)
-						draw.RoundedBoxEx( 8, 0, 0, w, 20, color_green, true, true, false, false )
+						draw.RoundedBoxEx( 0, 0, 0, w, 20, color_green, true, true, false, false )
 					end
 				else
 					function v:Paint( w, h )
@@ -501,11 +501,6 @@ net.Receive( "AdminPopups_ClaimCase", function( len )
 	end
 end )
 
---[[
-	CONCOMMAND
-	76561198227843632
---]]
-
 concommand.Add( "adminpopups_claimtop", function( ply, cmd, args )
 	if not AdminPopups.PlayerHasAccess( ply ) then
 		return
@@ -514,7 +509,7 @@ concommand.Add( "adminpopups_claimtop", function( ply, cmd, args )
 	local reports = #admin_popups
 	
 	if reports > 0 then
-		local button = admin_popups[1]:GetChildren()[12] -- button we want is 10th child of frame #1
+		local button = admin_popups[1]:GetChildren()[12] 
 		button.DoClick()
 	end	
 end )
