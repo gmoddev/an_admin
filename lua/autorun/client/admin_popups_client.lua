@@ -109,11 +109,8 @@ local function adminpopup_menu( Ply, message, claimed )
 	frm:SetPos( AdminPopups.Config.XPos, AdminPopups.Config.YPos )
 	frm.idiot = Ply
 	function frm:Paint( w, h )
-		-- Draw frame
 		draw.RoundedBox( 8, 0, 0, w, h, col_gray_light )
-		-- Draw top
 		draw.RoundedBoxEx( 8, 0, 0, w, 20, col_gray_dark, true, true, false, false )
-		
 	end
 	frm.lblTitle:SetColor( color_white )
 	frm.lblTitle:SetFont( "FONT_AdminPopup_Title" )
@@ -124,16 +121,12 @@ local function adminpopup_menu( Ply, message, claimed )
 		
 		if claimed == LocalPlayer() then
 			function frm:Paint( w, h )
-				-- Draw frame
 				draw.RoundedBox( 8, 0, 0, w, h, col_gray_light )
-				-- Draw top (green/claimed)
 				draw.RoundedBoxEx( 8, 0, 0, w, 20, color_green, true, true, false, false )
 			end
 		else
 			function frm:Paint( w, h )
-				-- Draw frame
 				draw.RoundedBox( 8, 0, 0, w, h, col_gray_light )
-				-- Draw top (red/someone else claimed)
 				draw.RoundedBoxEx( 8, 0, 0, w, 20, color_red_second, true, true, false, false )
 			end	
 		end
